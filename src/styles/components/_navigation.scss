@@ -4,6 +4,7 @@
   height: 100%;
   min-height: $minHeight;
   border-radius: $borderRadius;
+  width: 264px;
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
@@ -16,6 +17,7 @@
     user-select: none;
     position: relative;
   }
+
   .idContent {
     position: absolute; 
     bottom: 0;
@@ -36,60 +38,132 @@
       color: $color-5;
     }
   }
-  .navigation {
-    grid-area: 2;
-    padding: 2rem 1rem;
+}
 
-    ul {
-      height: 100%;
-      display: grid;
+.navigation {
+  grid-area: 2;
+  padding: 2rem 1rem;
 
-      li {
-        padding: 1rem 0 1rem .4rem;
-        font-size: 1.3rem;
-        position: relative;
+  ul {
+    height: 100%;
+    display: grid;
 
-        &:hover i {
-          transform: translate(3px, 3px)
-        }
+    li {
+      padding: 1rem 0 1rem .4rem;
+      font-size: 1.3rem;
+      position: relative;
 
-        a {
-          color: $color-5;
-        }
+      &:hover i {
+        transform: translate(3px, 3px)
+      }
 
-        .navActive {
-          color: $color-4;
-        }
-        i {
-          position: absolute;
-          font-size: 0.95rem;
-          transform: translateY(3px);
-          transition: .2s ease;
-        }
-        span {
-          margin-left: 2.7rem;
-        }
+      a {
+        color: $color-5;
+      }
+
+      .navActive {
+        color: $color-4;
+      }
+      i {
+        position: absolute;
+        font-size: 0.95rem;
+        transform: translateY(3px);
+        transition: .2s ease;
+      }
+      span {
+        margin-left: 2.7rem;
       }
     }
   }
 }
+
 .socialNetwork {
   grid-area: 3;
 
   ul {
     display: flex;
     width: 264px;
-    padding: 0 14px;
+    padding: 0 36px;
     justify-content: space-between;
 
     li {
       font-size: 1.5rem;
-      
-      .fa-linkedin {
+      background: $color-5;
+      color: $color-1;
+      border-radius: 50%;
+      padding: .5rem .8rem;
+      transition: .3s;
+      cursor: pointer;
+
+      a:visited {
         color: $color-1;
-        background: $color-5;
+      }
+      &:hover {
+        background: $color-4;
       }
     }
-
   }
+
+  .signature {
+    margin-top: 2rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    font-size: .7rem;
+
+    p {
+      color: $color-5;
+    }
+
+    a, a:visited {
+      color: $color-5;
+
+      &:hover {
+        color: $color-4;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px){
+.sidebar {
+  display: flex;
+  min-height: 50px;
+  margin-bottom: .2rem;
+  width: 100%;
+
+  .id, .socialNetwork {
+    display: none;
+  }
+  .navigation {
+    width: 100%;
+    padding: .1rem 1rem;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        margin-left: 1.5rem !important;
+      }
+    }
+  }
+}
+}
+@media screen and (max-width:580px){
+.sidebar {
+  ul {
+    justify-content: space-around !important;
+
+    li {
+      padding: 1rem 0 !important;
+    }
+    i {
+      font-size: 1.4rem !important;
+      transform: translateY(-3px) !important;
+    }
+    span {
+      display: none;
+    }
+  }
+}
 }
