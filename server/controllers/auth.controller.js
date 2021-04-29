@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const { signUpErrors, signInErrors } = require('../utils/errors.utils');
 const createToken = (id) => {
   return jwt.sign({id}, process.env.TOKEN_SECRET, {
-    expiresIn: maxAge
+    expiresIn: 3 * 24 * 60 * 60 * 1000
   })
 };
 
