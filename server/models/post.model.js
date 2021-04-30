@@ -6,15 +6,11 @@ const PostSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        message: {
+        message: { 
             type: String,
             trim: true,
             maxLength: 500,
         },
-        picture: {
-            type: String,
-        },
-
     },
     {
         timestamps: true,

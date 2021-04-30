@@ -16,6 +16,6 @@ app.get('*', checkUser);
 app.use('/api/user', userRoutes);
 app.use('/api/post', postRoutes);
 
-app.listen(5000, () => {
+app.listen(5001, () => {
     console.log(`listening on port ${process.env.PORT}`);
 })

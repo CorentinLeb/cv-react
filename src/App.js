@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Knowledges from './pages/Knowledges';
 import NotFound from './pages/NotFound';
-import Contact from './pages/Contact'
+import Contact from './pages/Contact';
 
 const App = () => {
   return (
